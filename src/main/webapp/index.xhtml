@@ -11,27 +11,31 @@
     </h:head>
     <h:body>
         <h:form>  
-    <p:growl id="MenuPrincipal"/>
- 
     <p:menubar>              
         <p:menuitem value="Inicio" action="#{menuView.inicio}" icon="ui-icon-home" />         
         <p:submenu label="Catálogo" icon="ui-icon-image">
             <p:menuitem value="Destacados" url="#" icon="ui-icon-star" />
             <p:menuitem value="Ofertas" url="#" icon="ui-icon-tag" />
+            <p:menuitem value="Montaña" url="#" icon="ui-icon-tag" />
+            <p:menuitem value="Ruta" url="#" icon="ui-icon-tag" />
+            <p:menuitem value="Urbanas" url="#" icon="ui-icon-tag" />
+            <p:menuitem value="Hombres" url="#" icon="ui-icon-tag" />
+            <p:menuitem value="Mujeres" url="#" icon="ui-icon-tag" />
+            <p:menuitem value="Niños" url="#" icon="ui-icon-tag" />
         </p:submenu> 
         <p:menuitem value="Distribuidores" action="#" icon="ui-icon-suitcase" /> 
          <p:menuitem value="Contáctenos" action="#" icon="ui-icon-mail-closed" />   
         <f:facet name="options">
             <i class="fa fa-user fa-2x" style="float : left; vertical-align: central"></i>
-            <h:link>Iniciar Sesión</h:link>/
+    <p:commandButton value="Iniciar Sesión"  actionListener="#{dfView.chooseCar}">
+        <p:ajax event="dialogReturn" listener="#{dfView.onCarChosen}" update="growl" />
+    </p:commandButton>
             <i class="fa fa-check-square fa-2x"></i>
             <h:link>Registrarse</h:link>            
         </f:facet>
-    </p:menubar>
-    
-    <p:contentFlow value="#{imagesView.images}" var="image">
-    <!-- p:graphicImage name="/Images/#{image}" styleClass="content" /> -->
-    <p:graphicImage library="Images" name="dos.jpg" styleClass="content"/>
+    </p:menubar>           
+    <p:contentFlow value="#{imagesView.images}" var="image">    
+    <p:graphicImage library="Images" name="#{image}" styleClass="content"/>
     <div class="caption">#{image}</div>
    </p:contentFlow>
 </h:form>
