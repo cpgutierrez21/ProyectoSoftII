@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title>Facelet Title</title>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        
+        Entrar / Registrarse
+        
+        <h:form>
+    <p:growl id="growl" life="2000" />
+    <i class="fa fa-shopping-cart fa-2x" style=" float : right"></i>
+    <i class="fa fa-user fa-2x" style=" float : right"></i>
+
+    <p:contentFlow value="#{imagesView.images}" var="image">
+        <p:graphicImage name="demo/images/nature/#{image}" styleClass="content" />
+        <div class="caption">#{image}</div>
+    </p:contentFlow>
+    
+    
+    <p:commandButton value="Ajax Submit" id="ajax" update="growl" actionListener="#{buttonView.buttonAction}" styleClass="ui-priority-primary" />
+    <img src="WEB-INF/Images/dos.jpg" alt=""/>
+    
+    <h3>Cicla uno</h3>
+    <p:panelGrid columns="2">
+   <f:facet name="header">
+       <p:graphicImage library="Images" name="uno.jpg" height="260" width="300" />
+    </f:facet>
+ 
+    <h:outputText value="Name:" />
+    <h:outputText value="Kobe Bryant" />
+ 
+    <h:outputText value="Team:" />
+    <h:outputText value="Los Angeles Lakers" />
+ 
+    <h:outputText value="Position:" />
+    <h:outputText value="Shooting Guard" />
+ 
+    <h:outputText value="Number:" />
+    <h:outputText value="24" />
+    
+    
+</p:panelGrid>
+ 
+<h3>Cicla dos</h3>
+    <p:panelGrid columns="2">
+    <f:facet name="header">
+        <p:graphicImage library="Images" name="dos.jpg"  height="260" width="300" />
+    </f:facet>
+ 
+    <h:outputText value="Name:" />
+    <h:outputText value="Kobe Bryant" />
+ 
+    <h:outputText value="Team:" />
+    <h:outputText value="Los Angeles Lakers" />
+ 
+    <h:outputText value="Position:" />
+    <h:outputText value="Shooting Guard" />
+ 
+    <h:outputText value="Number:" />
+    <h:outputText value="24" />
+</p:panelGrid> 
+
+
+<h3>Cicla tres</h3>
+    <p:panelGrid columns="2">
+    <f:facet name="header">
+        <p:graphicImage library="Images" name="tres.jpg" height="260" width="300" />
+    </f:facet>
+ 
+    <h:outputText value="Name:" />
+    <h:outputText value="Kobe Bryant" />
+ 
+    <h:outputText value="Team:" />
+    <h:outputText value="Los Angeles Lakers" />
+ 
+    <h:outputText value="Position:" />
+    <h:outputText value="Shooting Guard" />
+ 
+    <h:outputText value="Number:" />
+    <h:outputText value="24" />
+</p:panelGrid> 
+
+    
+   
+</h:form>
+    </h:body>
+</html>
+
